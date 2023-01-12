@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  FirstGreet:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: first_greet/
+      Handler: app.handler
+      Runtime: python3.9
+      Architectures:
+        - x86_64
+      Layers:
+        - !Ref LibraryLayer
+  
+  LibraryLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      ContentUri: library_layer/
+    Metadata:
+      BuildMethod: python3.9

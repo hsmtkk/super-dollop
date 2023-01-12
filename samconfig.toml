@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "super-dollop"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1bmlfnxkmxd3t"
+s3_prefix = "super-dollop"
+region = "us-west-2"
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
